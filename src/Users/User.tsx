@@ -1,5 +1,5 @@
 import s from "../Users/User.module.scss";
-import React, {DragEventHandler} from "react";
+import React from "react";
 
 type PropsType = {
     name: string

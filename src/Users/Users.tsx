@@ -35,6 +35,7 @@ export const Users = (props: PropsType) => {
         {props.title}
         <User name={"Anna"}/>
         <User name={"Oly"}/>
+        {content}
         <User name={"Katy"}/>
     </div>
 }

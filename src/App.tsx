@@ -1,9 +1,10 @@
 import React, {useState} from 'react';
 import s from "../src/App.module.scss";
+import {Users} from "./Users/Users";
 
 
 type BoardsType = { id: number, title: string, items: ItemsType };
-type ItemsType = [{ items: { id: number, title: string } }];
+type ItemsType = [{ items: ItemType }];
 type ItemType = { id: number, title: string }
 
 function App() {
@@ -40,7 +41,6 @@ function App() {
     const dragOverHandler = (e: any) => {
         e.preventDefault()
         if (e.target.className == "item") {
-            //     if(e.target.classList.contains("item")){
             e.target.style.boxShadow = "0 4px 3px gray"
         }
     }
@@ -100,7 +100,7 @@ function App() {
     return (
         <div className={s.app}>
             {boards.map((board: any) => {
-                <div
+                return <div
                     onDragOver={(e) => dragOverHandler(e)}
                     onDrop={(e) => dropCardHandler(e, board)}
                     className={s.board}
@@ -109,7 +109,7 @@ function App() {
                         {board.title}
                     </div>
                     {board.items.map((item: any) => {
-                        <div
+                        return <div
                             onDragOver={(e) => dragOverHandler(e)}
                             onDragLeave={(e) => dragLeaveHandler(e)}
                             onDragStart={(e) => dragStartHandler(e, board, item)}
@@ -123,9 +123,7 @@ function App() {
                     })}
                 </div>
             })}
-
-
-            {/*<Users title={"Users"}/>*/}
+            {/*<Users  title={"Users"}/>*/}
             {/*<Users title={"Mentors"}/>*/}
         </div>
     );
@@ -133,3 +131,6 @@ function App() {
 
 
 export default App;
+
+
+
