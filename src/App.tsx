@@ -1,6 +1,6 @@
 import React, {useState} from 'react';
-import s from "../src/App.module.scss";
-import {Users} from "./Users/Users";
+import s from "./App.module.scss";
+// import {Users} from "./Users/Users";
 
 
 type BoardsType = { id: number, title: string, items: ItemsType };
@@ -96,7 +96,6 @@ function App() {
         e.target.style.boxShadow = "none"
     }
 
-
     return (
         <div className={s.app}>
             {boards.map((board: any) => {
@@ -128,7 +127,6 @@ function App() {
         </div>
     );
 }
-
 
 export default App;
 
